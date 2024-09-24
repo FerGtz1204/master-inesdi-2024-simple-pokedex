@@ -1,20 +1,34 @@
 import c from "classnames";
+
 import { useTheme } from "contexts/use-theme";
 import { usePokemon, usePokemonList, useTextTransition } from "hooks";
 import { useState } from "react";
 import { randomMode } from "utils/random";
 import { Button } from "./button";
 import { LedDisplay } from "./led-display";
+import { Pokemon } from "models";
+import { usePokemonVulnerabilitiesTypes } from "hooks/use-pokemon-vulnerability";
+
+import TypesDisplay from "./pokemon-types";
+import TeamPokemonSelect from "./pokemon-team-assemble";
 
 import "./pokedex.css";
 
-export function Pokedex() {
+type PokemonArray = Pokemon[];
+
+interface TeamPokemonProps {
+  teamPokemons: PokemonArray | undefined;
+  setTeamPokemon: React.Dispatch<React.SetStateAction<PokemonArray>>;
+}
+
+export function Pokedex({ teamPokemons, setTeamPokemon } : TeamPokemonProps) {
   const { theme } = useTheme();
   const { ready, resetTransition } = useTextTransition();
   const { pokemonList } = usePokemonList();
   const [i, setI] = useState(0);
   const { pokemon: selectedPokemon } = usePokemon(pokemonList[i]);
   const { pokemon: nextPokemon } = usePokemon(pokemonList[i + 1]);
+  const { vulnerabilities, types } = usePokemonVulnerabilitiesTypes(selectedPokemon);
 
   const prev = () => {
     resetTransition();
@@ -34,8 +48,16 @@ export function Pokedex() {
 
   return (
     <div className={c("pokedex", `pokedex-${theme}`)}>
+      <div className="panel types-weaks-panel">
+        <div className="types-weaks-container">
+          <TypesDisplay types={types} title="Types" />
+          <TypesDisplay types={vulnerabilities} title="Weaknesses" />
+        </div>
+      </div>
+
       <div className="panel left-panel">
         <div className="screen main-screen">
+        <TeamPokemonSelect teamPokemons={teamPokemons} setTeamPokemon={setTeamPokemon} currentPokemon={selectedPokemon} />
           {selectedPokemon && (
             <img
               className={c(
@@ -49,6 +71,7 @@ export function Pokedex() {
             />
           )}
         </div>
+
         <div className="screen name-display">
           <div
             className={c(
@@ -62,6 +85,7 @@ export function Pokedex() {
           </div>
         </div>
       </div>
+
       <div className="panel right-panel">
         <div className="controls leds">
           <LedDisplay color="blue" />

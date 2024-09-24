@@ -8,7 +8,7 @@ type UsePokemonOpts = {
   limit?: number;
 };
 
-export function usePokemonList({ limit }: UsePokemonOpts = { limit: 42 }) {
+export function usePokemonList({ limit }: UsePokemonOpts = { limit: 100 }) {
   const [isLoading, setIsLoading] = useState(true);
   const [pokemonList, setPokemonList] = useState<PokemonUri[]>([]);
 

@@ -1,8 +1,9 @@
 .pokedex {
-  width: 700px;
-  height: 360px;
+  width: 1000px;
+  height: 455px;
 
-  border-radius: 30px 8px 8px 30px;
+  border-radius: 30px 30px 30px 30px;
+  margin-top: 20px;
 
   display: flex;
   flex-direction: row;
@@ -23,25 +24,6 @@
   border: 6px solid var(--darker-blue);
 }
 
-.panel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.left-panel {
-  width: 60%;
-  height: 100%;
-  border-right: 6px solid var(--dark-grey);
-  padding: 10px 20px;
-  justify-content: space-evenly;
-}
-
-.screen {
-  background-color: #fff;
-  border-radius: 8%;
-}
 
 .pokedex-red .screen,
 .pokedex-red .button {
@@ -56,6 +38,50 @@
 .pokedex-blue .screen,
 .pokedex-blue .button {
   border: 4px solid var(--dark-blue);
+}
+
+.main-screen img {
+  width: 200px;
+  height: 200px;
+}
+
+.screen {
+  background-color: #fff;
+  border-radius: 8%;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.types-weaks-panel {
+  width: 40%;
+  height: 100%;
+  border-right: 6px solid var(--dark-grey);
+  padding: 10px 20px;
+  justify-content: space-evenly;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.left-panel {
+  width: 60%;
+  height: 100%;
+  border-right: 6px solid var(--dark-grey);
+  padding: 10px 20px;
+  justify-content: space-evenly;
+}
+
+.left-panel .main-screen {
+  width: 260px;
+  height: 240px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .left-panel .name-display {
@@ -80,26 +106,6 @@
   align-items: center;
 }
 
-.left-panel .main-screen {
-  width: 260px;
-  height: 200px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.main-screen img {
-  width: 200px;
-  height: 200px;
-}
-
-.sprite {
-  object-fit: cover;
-  image-rendering: pixelated;
-}
-
 .right-panel .controls {
   width: 100%;
   display: flex;
@@ -122,10 +128,6 @@
   justify-content: center;
 }
 
-.obfuscated {
-  filter: blur(5px);
-}
-
 .ready {
   filter: blur(0);
 }
@@ -140,4 +142,13 @@
 
 .ready--slow {
   transition: filter 500ms linear 800ms;
+}
+
+.sprite {
+  object-fit: cover;
+  image-rendering: pixelated;
+}
+
+.obfuscated {
+  filter: blur(5%);
 }

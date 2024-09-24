@@ -1,0 +1,22 @@
+.type-title {
+    /* display: inline-block; */
+    background-color: var(--grey); /* title background */
+    color: whitesmoke; /* White text */
+    padding: 10px 24px; /* Some padding */
+    font-size: 16px; /* Set a font size */
+    border: none; /* Remove borders */
+    border-radius: 12px; /* Rounded corners */
+    text-align: center;
+    margin-right: 0.5rem;
+}
+  
+.type-label {
+    background-color: white;
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    padding: 0.25rem 1rem;
+    border-radius: 8px;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;   
+}

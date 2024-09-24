@@ -1,0 +1,22 @@
+.team-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.team-button {
+    cursor: pointer;
+    width: 60px;
+    height: 40px;
+    border-radius: 15%;
+    border-color: transparent;
+    background-color: var(--grey);
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.team-button:hover {
+    background-color: var(--dark-grey);
+}
