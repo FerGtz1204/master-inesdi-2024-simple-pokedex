@@ -1,4 +1,4 @@
-import TeamPokemons from "components/team-pokemons";
+import TeamPokemons from "components/pokemons-team";
 import { Pokedex } from "components/pokedex";
 import { ThemeProvider } from "contexts/theme-context";
 import { Pokemon } from "models";

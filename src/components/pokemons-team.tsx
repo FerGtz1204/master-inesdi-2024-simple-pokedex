@@ -1,6 +1,6 @@
 import { useTheme } from "contexts/use-theme";
 import { Pokemon } from "models";
-import "./team-pokemons.css";
+import "./pokemons-team.css";
 import classNames from "classnames";
 
 interface TeamPokemonSelectProps {

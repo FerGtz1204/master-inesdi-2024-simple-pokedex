@@ -16,6 +16,14 @@
     margin-top: 10px;
   }
   
+  .team-remove {
+    font-size: 30px;
+    font-weight: bold;
+    color: darkblue;
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+
   .team-grid {
     display: grid;
     grid-template-columns: 50% 50%;
